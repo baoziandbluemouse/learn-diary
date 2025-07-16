@@ -1,0 +1,15 @@
+{
+  "Blue-Topaz-Codebox-Highlight@@code-theme-selection": "code-theme-material-palenight",
+  "blue-topaz-theme@@color-scheme-options": "color-scheme-options-topaz-nord",
+  "blue-topaz-theme@@background-settings-workplace-background-image": false,
+  "blue-topaz-theme@@background-settings-workplace-theme-light": "background-settings-workplace-theme-light-blue-mountain",
+  "blue-topaz-theme@@background-settings-workplace-theme-dark": "background-settings-workplace-theme-dark-dark-sky",
+  "blue-topaz-theme@@background-image-settings-switch": true,
+  "blue-topaz-theme@@toggle-nonoverlapping-bg": false,
+  "blue-topaz-theme@@background-notebook-liked-switch": false,
+  "blue-topaz-theme@@background-image-settings-markdown-page-options": "background-image-settings-markdown-page-transparent",
+  "blue-topaz-theme@@toggle-bg-panel-page": true,
+  "blue-topaz-theme@@accent-strong@@light": "#000000",
+  "blue-topaz-theme@@accent-strong@@dark": "#77C768F7",
+  "blue-topaz-theme@@text-normal@@dark": "#D6DAF9"
+}

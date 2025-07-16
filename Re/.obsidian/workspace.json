@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "e608fbde001439f2",
+    "type": "split",
+    "children": [
+      {
+        "id": "2c9ffe87c739dd0a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "01e8eabdfddc0b78",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "算法学习/algorithm-day10-11/index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7ab4c2770307c677",
+    "type": "split",
+    "children": [
+      {
+        "id": "3b6109e20fca8b72",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fd2459eff79fb573",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "cebfc16b7e7b9732",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "b0dd619241b57d76",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "06d13ead1c3e39d9",
+    "type": "split",
+    "children": [
+      {
+        "id": "6de9dc561f534158",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "683e834fd363e084",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "总结/回文.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-coming-in",
+              "title": "回文 的反向链接列表"
+            }
+          },
+          {
+            "id": "1cf1b213a21a49ab",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "总结/回文.md",
+                "linksCollapsed": true,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-going-out",
+              "title": "回文 的出链列表"
+            }
+          },
+          {
+            "id": "8fdf20c32047b38f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "d552e285e7c75fe9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "算法学习/algorithm-day10-11/index.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "index 的大纲"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "01e8eabdfddc0b78",
+  "lastOpenFiles": [
+    "算法学习/algorithm-day9/index.md",
+    "动态规划/背包问题/背包问题.md",
+    "算法学习/algorithm-day10-11/index.md",
+    "算法学习/algorithm-day6-7/index.md",
+    "总结/判断环.md",
+    "总结/拓扑排序.md",
+    "总结/c++常用函数.md",
+    "算法学习/algorithm-day8/index.md",
+    "算法学习/algorithm-iostream/index.md",
+    "2025-07-04.md",
+    "未命名.canvas",
+    "赛后补题/round-1026.md",
+    "赛后补题/round-89.md",
+    "赛后补题/ABC-403.md",
+    "赛后补题/ABC-402.md",
+    "赛后补题/ABC-401.md",
+    "赛后补题/ABC-405.md",
+    "赛后补题/ABC-407.md",
+    "赛后补题/ABC-409.md",
+    "赛后补题/ABC-410.md",
+    "赛后补题/ABC-411.md",
+    "赛后补题/round-1028.md",
+    "赛后补题/starcoding-round-4.md",
+    "总结/stoi函数使用.md",
+    "总结/回文.md",
+    "赛后补题/ABC-398.md",
+    "算法学习/algorithm-manythings/index.md",
+    "动态规划/矩阵快速幂dp/Pasted image 20250513204449.png",
+    "动态规划/矩阵快速幂dp",
+    "算法学习/algorithm-dfs-and-bfs/dfs-and-bfs-distinction.jpg",
+    "算法学习/algorithm-dfs-and-bfs/huosuzhanshiba.jpg",
+    "未命名",
+    "动态规划/状压dp",
+    "动态规划/区间dp",
+    "动态规划/划分dp",
+    "动态规划/背包问题",
+    "动态规划/最长公共子序列",
+    "赛后补题/ABC-397",
+    "动态规划/动态规划题型总结",
+    "Cmake",
+    "动态规划/最长递增子序列/6.png",
+    "动态规划/最长递增子序列/5.png",
+    "动态规划/最长递增子序列/4.png",
+    "动态规划/最长递增子序列/3.png",
+    "动态规划/最长递增子序列/2.png",
+    "动态规划/最长递增子序列/1.png",
+    "动态规划/最长递增子序列/联想截图_20250205191506.png"
+  ]
+}
