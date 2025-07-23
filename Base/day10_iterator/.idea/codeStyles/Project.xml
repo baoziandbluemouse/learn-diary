@@ -1,0 +1,23 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <RiderCodeStyleSettings>
+      <option name="/Default/CodeStyle/CodeFormatting/CppClangFormat/ExecutableToUse/@EntryValue" value="Custom" type="string" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppClangFormat/ExternalClangFormatPath/@EntryValue" value="E:\software\CLion 2024.3.5\.clang-format" type="string" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppClangFormat/EnableClangFormatSupport/@EntryValue" value="false" type="bool" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/ALIGNMENT_TAB_FILL_STYLE/@EntryValue" value="OPTIMAL_FILL" type="string" />
+      <option name="/Default/CodeStyle/CppIncludeDirective/SortIncludeDirectives/@EntryValue" value="true" type="bool" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/NAMESPACE_DECLARATION_BRACES/@EntryValue" value="END_OF_LINE" type="string" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/KEEP_BLANK_LINES_IN_DECLARATIONS/@EntryValue" value="1" type="long" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/KEEP_BLANK_LINES_IN_CODE/@EntryValue" value="1" type="long" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/SIMPLE_EMBEDDED_STATEMENT_STYLE/@EntryValue" value="LINE_BREAK" type="string" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/SIMPLE_CASE_STATEMENT_STYLE/@EntryValue" value="ON_SINGLE_LINE" type="string" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/LABELED_STATEMENT_STYLE/@EntryValue" value="ON_SINGLE_LINE" type="string" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/WRAP_LIMIT/@EntryValue" value="60" type="long" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/WRAP_TERNARY_EXPR_STYLE/@EntryValue" value="WRAP_IF_LONG" type="string" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/WRAP_BEFORE_COLON/@EntryValue" value="true" type="bool" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/WRAP_BRACED_INIT_LIST_STYLE/@EntryValue" value="CHOP_IF_LONG" type="string" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/WRAP_BASE_CLAUSE_STYLE/@EntryValue" value="CHOP_IF_LONG" type="string" />
+      <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/WRAP_CTOR_INITIALIZER_STYLE/@EntryValue" value="CHOP_IF_LONG" type="string" />
+    </RiderCodeStyleSettings>
+  </code_scheme>
+</component>
