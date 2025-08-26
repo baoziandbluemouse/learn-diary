@@ -869,6 +869,7 @@ lie
 left
 linjiejuzhen
 linjiebiao
+len
 gcd
 ge
 get
@@ -1429,6 +1430,8 @@ pIA
 push
 prex
 prey
+perm
+pos
 qmi
 queue
 qmk
@@ -2426,6 +2429,7 @@ anbW
 alCD
 acyclic
 ans
+air
 ST
 STL
 Squares
@@ -2917,6 +2921,7 @@ esU
 eSG
 endl
 edges
+eacbba
 BFS
 BrB
 BW
@@ -3669,6 +3674,7 @@ Lcc
 LV
 LC
 LN
+LCS
 NnN
 NX
 NH
@@ -4019,6 +4025,7 @@ TLE
 Takahashi
 True
 Triangles
+TSP
 UuU
 Up
 Um
