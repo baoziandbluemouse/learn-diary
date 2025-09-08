@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "算法学习/algorithm-dfs-and-bfs/index.md",
+                "file": "总结/stoi函数使用.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "stoi函数使用"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "算法学习/algorithm-dfs-and-bfs/index.md",
+                "file": "总结/stoi函数使用.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "index 的大纲"
+              "title": "stoi函数使用 的大纲"
             }
           }
         ],
@@ -170,6 +170,7 @@
   },
   "active": "704e97fff104a79a",
   "lastOpenFiles": [
+    "算法学习/algorithm-dfs-and-bfs/index.md",
     "赛后补题/ABC-418.md",
     "赛后补题/div3补题.md",
     "赛后补题/ABC-417.md",
@@ -196,7 +197,6 @@
     "赛后补题/ABC-403.md",
     "赛后补题/ABC-402.md",
     "赛后补题/ABC-401.md",
-    "赛后补题/ABC-405.md",
     "动态规划/矩阵快速幂dp/Pasted image 20250513204449.png",
     "动态规划/矩阵快速幂dp",
     "算法学习/algorithm-dfs-and-bfs/dfs-and-bfs-distinction.jpg",
