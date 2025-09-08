@@ -8,3 +8,10 @@ Code/Schoolwork/
 # **/表示匹配任意层级的目录
 Qtwork/**/build/ 
 # Qtwork目录下任意深度的build文件都会被忽略
+
+
+# 屏蔽Algorihtm目录下的所有.cph文件
+Code/Algorithm/**/.cph/
+
+# 屏蔽所有exe可执行文件
+*.exe
