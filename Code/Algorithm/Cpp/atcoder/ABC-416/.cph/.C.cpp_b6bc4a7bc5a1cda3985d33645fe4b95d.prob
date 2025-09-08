@@ -1,0 +1,1 @@
+{"name":"Local: C","url":"e:\\Code\\Cpp\\atcoder\\ABC-416\\C.cpp","tests":[{"id":1754055116484,"input":"5 5 416\na\naa\naaa\naa\na\n","output":"aaaaaaa\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\Cpp\\atcoder\\ABC-416\\C.cpp","group":"local","local":true}

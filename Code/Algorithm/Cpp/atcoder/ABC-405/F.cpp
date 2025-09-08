@@ -1,0 +1,100 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+const int N = 3e6 + 10;
+int n, m, q;
+ll sum[N], c[N], d[N], ans[N];
+vector<int> l[N], r[N], L[N], R[N];
+int lowbit(int x)
+{
+    return x & -x;
+}
+
+void update(int x, ll val)
+{
+    for (int i = x; i <= n; i += lowbit(i))
+    {
+        sum[i] += val;
+    }
+    // while (x <= n)
+    // {
+    //     sum[x] += val;
+    //     x += lowbit(x);
+    // }
+}
+
+ll getsum(int x)
+{
+    ll ans = 0;
+    while (x)
+    {
+        ans += sum[x];
+        x -= lowbit(x);
+    }
+    // for (int i = x; i > 0; i -= lowbit(i))
+    // {
+    //     ans += sum[i];
+    // }
+    return ans;
+}
+
+int main()
+{
+    cin >> n >> m;
+    n *= 2;
+    for (int i = 1; i <= m; i++)
+    {
+        int u, v;
+        cin >> u >> v;
+        l[u].push_back(v); // l[u]代表以u作为左端点，其所构成的每条线段的右端点集合
+        r[v].push_back(u); // r[v]代表以v作为右端点，其所构成的每条线段的左端点集合
+    }
+    cin >> q;
+    for (int i = 1; i <= q; i++)
+    {
+        // 记录查询的左右端点，一个i存储一组
+        cin >> c[i] >> d[i];
+        L[c[i]].push_back(i);
+        R[d[i]].push_back(i);
+        // 这里存储下标，方便待会查询
+    }
+    // 采用树状数组的方式，一遍正向求前缀和，一遍逆向，但仍是求前缀和
+    // ans[i]就代表以c[j],d[j]为左右端点的线段，他有多少条相交线
+    for (int i = 1; i <= n; i++)
+    {
+        // 正向，遍历右端点
+        for (auto j : r[i])
+        {
+            update(j, 1);
+            update(i, -1);
+        }
+        // 记录ans
+        for (auto j : R[i])
+        {
+            ans[j] += getsum(c[j]);
+            // ans加上c[j]为边界的前缀和
+        }
+    }
+    for (int i = 0; i < N; i++)
+    {
+        sum[i] = 0;
+    }
+    for (int i = n; i >= 1; i--)
+    {
+        // 逆向，遍历左端点
+        for (auto j : l[i])
+        {
+            update(i, 1);
+            update(j, -1);
+        }
+        for (auto j : L[i])
+        {
+            ans[j] += getsum(d[j]); // 注意，这里是以d[j]为边界的前缀和，不是后缀和
+        }
+    }
+    for (int i = 1; i <= q; i++)
+    {
+        cout << ans[i] << "\n";
+    }
+    return 0;
+}

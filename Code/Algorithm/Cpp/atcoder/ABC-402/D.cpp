@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+const int N = 1e6 + 10;
+ll c[N];
+int main()
+{
+    ll n, m, a, b;
+    cin >> n >> m;
+    ll ans = m * (m - 1) / 2;
+    while (m--)
+    {
+        cin >> a >> b;
+        c[(a + b) % n]++;
+    }
+    for (int i = 0; i < n; i++)
+    {
+        ans -= c[i] * (c[i] - 1) / 2;
+    }
+    cout << ans << "\n";
+    return 0;
+}

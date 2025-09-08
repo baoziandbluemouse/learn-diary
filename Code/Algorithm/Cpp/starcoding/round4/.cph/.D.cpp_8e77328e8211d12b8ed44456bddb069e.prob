@@ -1,0 +1,1 @@
+{"name":"Local: D","url":"e:\\Code\\C\\starcoding\\round4\\D.cpp","tests":[{"id":1748442927360,"input":"10\n15 18 17 10 1 14 17 18 9 14 \n7\n10 10\n1 6\n1 8\n3 4\n1 8\n1 4\n5 8","output":"1\n1\n4\n5\n6\n6\n8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\starcoding\\round4\\D.cpp","group":"local","local":true}

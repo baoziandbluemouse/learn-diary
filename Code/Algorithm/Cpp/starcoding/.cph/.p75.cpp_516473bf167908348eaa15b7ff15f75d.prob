@@ -1,0 +1,1 @@
+{"name":"Local: p75","url":"e:\\Code\\C\\starcoding\\p75.cpp","tests":[{"id":1738742229765,"input":"10 3\n2 2 1\n1 5 3 \n2 10 4","output":"24"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\starcoding\\p75.cpp","group":"local","local":true}

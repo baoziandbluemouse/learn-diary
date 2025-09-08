@@ -1,0 +1,1 @@
+{"name":"Local: p59","url":"e:\\Code\\C\\starcoding\\p59.cpp","tests":[{"id":1736757675688,"input":"2\n3\nred\nred\nblue\n5\na\nb\ne\nd\ne","output":"red 2\nblue 1\na 1\nb 1\ne 2\nd 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\starcoding\\p59.cpp","group":"local","local":true}

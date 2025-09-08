@@ -1,0 +1,1 @@
+{"name":"Local: p357","url":"e:\\Code\\C\\starcoding\\other\\p357.cpp","tests":[{"id":1744632687345,"input":"1\n6\nf w abc\nf w abc\nb w def\nb w def\nf d\nb d","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\starcoding\\other\\p357.cpp","group":"local","local":true}

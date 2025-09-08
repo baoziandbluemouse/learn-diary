@@ -1,0 +1,1 @@
+{"name":"Local: p58-priority","url":"e:\\Code\\C\\starcoding\\p58-priority.cpp","tests":[{"id":1736753043246,"input":"3\n1 5\n1 7\n2","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\starcoding\\p58-priority.cpp","group":"local","local":true}

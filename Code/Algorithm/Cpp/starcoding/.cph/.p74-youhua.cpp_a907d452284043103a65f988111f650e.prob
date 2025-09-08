@@ -1,0 +1,1 @@
+{"name":"Local: p74-youhua","url":"e:\\Code\\C\\starcoding\\p74-youhua.cpp","tests":[{"id":1738577930507,"input":"42 6\n1 35\n25 70\n59 79\n65 63\n46 6\n28 82\n962 6\n43 96\n37 28\n5 92\n54 3\n83 93\n17 22\n0 0","output":"117\n334"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\starcoding\\p74-youhua.cpp","group":"local","local":true}

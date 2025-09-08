@@ -1,0 +1,1 @@
+{"name":"Local: B","url":"e:\\Code\\C\\starcoding\\round4\\B.cpp","tests":[{"id":1748086335723,"input":"9\n132\n241\n650\n625\n18\n985\n962\n449\n298","output":"137\n251\n653\n631\n19\n991\n967\n457\n307"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\starcoding\\round4\\B.cpp","group":"local","local":true}

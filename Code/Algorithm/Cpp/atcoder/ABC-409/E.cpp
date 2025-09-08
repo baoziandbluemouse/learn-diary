@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+const int N = 1e5 + 5;
+int n;
+ll a[N], ans; // a[i]存的是第i个结点的电子数
+struct node
+{
+    int id;
+    ll w;
+};
+vector<node> g[N];
+ll sum[N];
+void dfs(int x, int fa)
+{
+    for (auto &i : g[x])
+    {
+        if (i.id == fa)
+            continue;
+        dfs(i.id, x);
+        a[x] += a[i.id];
+        sum[x] += abs(a[i.id]) * i.w;
+    }
+    ans += sum[x];
+}
+int main()
+{
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> a[i];
+    }
+    for (int i = 1; i < n; i++)
+    {
+        int u, v, w;
+        cin >> u >> v >> w;
+        g[u].push_back({v, w});
+        g[v].push_back({u, w});
+    }
+    dfs(1, 0);
+    cout << ans << "\n";
+    return 0;
+}

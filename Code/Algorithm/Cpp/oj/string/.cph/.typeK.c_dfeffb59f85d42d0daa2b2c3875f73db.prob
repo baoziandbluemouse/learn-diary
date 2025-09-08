@@ -1,0 +1,1 @@
+{"name":"Local: typeK","url":"e:\\Code\\C\\vsc\\oj\\string\\typeK.c","tests":[{"id":1727869888431,"input":"abcdedcba","output":"yes"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\vsc\\oj\\string\\typeK.c","group":"local","local":true}

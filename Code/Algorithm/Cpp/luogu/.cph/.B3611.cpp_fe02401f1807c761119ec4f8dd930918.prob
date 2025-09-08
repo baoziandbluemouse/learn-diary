@@ -1,0 +1,1 @@
+{"name":"Local: B3611","url":"e:\\Code\\C\\luogu\\B3611.cpp","tests":[{"id":1740486986343,"input":"4\n0 0 0 1\n1 0 0 0\n0 0 0 1\n0 1 0 0","output":"1 1 0 1\n1 1 0 1\n1 1 0 1\n1 1 0 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\luogu\\B3611.cpp","group":"local","local":true}

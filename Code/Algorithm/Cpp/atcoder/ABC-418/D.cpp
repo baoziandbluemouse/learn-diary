@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+const int N = 2e5 + 10;
+ll dp[N][2];
+
+void solve()
+{
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    s = " " + s;
+    dp[1][s[1] - '0'] = 1;
+    for (int i = 2; i <= n; i++)
+    {
+        dp[i][s[i] - '0'] = 1;
+        if (s[i] == '0')
+        {
+            dp[i][0] += dp[i - 1][1];
+            dp[i][1] += dp[i - 1][0];
+        }
+        else
+        {
+            dp[i][0] += dp[i - 1][0];
+            dp[i][1] += dp[i - 1][1];
+        }
+    }
+    ll res = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        res += dp[i][1];
+    }
+    cout << res << "\n";
+}
+
+int main()
+{
+    int _ = 1;
+    // cin >> _;
+    while (_--)
+    {
+        solve();
+    }
+    return 0;
+}

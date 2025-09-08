@@ -1,0 +1,1 @@
+{"name":"Local: 19723","url":"e:\\Code\\C\\lanqiao\\lian-xi\\19723.cpp","tests":[{"id":1743075251644,"input":"3\nadd 1\nadd 2\nquery\nadd 1\nsync 1\nsync 1\nsync 2\nquery\nsync 1\nquery\nsync 2\nsync 2\nsync 1\nquery","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\lanqiao\\lian-xi\\19723.cpp","group":"local","local":true}

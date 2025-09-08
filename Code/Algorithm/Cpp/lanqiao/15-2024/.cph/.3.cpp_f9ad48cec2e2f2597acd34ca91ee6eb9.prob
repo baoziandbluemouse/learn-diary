@@ -1,0 +1,1 @@
+{"name":"Local: 3","url":"e:\\Code\\C\\lanqiao\\15-2024\\3.cpp","tests":[{"id":1742989357424,"input":"5 4\n10 20 30 40 50\n10 40 20 30\n1 2\n1 3\n2 4\n3 5\n1 2\n1 3\n3 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\lanqiao\\15-2024\\3.cpp","group":"local","local":true}

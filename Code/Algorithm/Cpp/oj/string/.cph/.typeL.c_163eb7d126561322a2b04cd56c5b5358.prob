@@ -1,0 +1,1 @@
+{"name":"Local: typeL","url":"e:\\Code\\C\\vsc\\oj\\string\\typeL.c","tests":[{"id":1727947136943,"input":"I am a student of Fujian Normal University.","output":"University"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\vsc\\oj\\string\\typeL.c","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: p44","url":"e:\\Code\\C\\starcoding\\p44.cpp","tests":[{"id":1738316009162,"input":"1\n7 1 17 3\n19\n25\n1","output":"6181080\n664713299\n528482305"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\starcoding\\p44.cpp","group":"local","local":true}

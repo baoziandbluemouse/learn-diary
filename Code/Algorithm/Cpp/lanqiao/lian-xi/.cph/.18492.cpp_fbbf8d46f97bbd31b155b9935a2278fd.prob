@@ -1,0 +1,1 @@
+{"name":"Local: 18492","url":"e:\\Code\\C\\lanqiao\\lian-xi\\18492.cpp","tests":[{"id":1743163809325,"input":"6 6\n1 2 2 2 3 4\n1 2 4 2\n2 2 4 2\n3 2 4 2\n3 1 1 2\n4 2 4 2\n4 2 5 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code\\C\\lanqiao\\lian-xi\\18492.cpp","group":"local","local":true}
