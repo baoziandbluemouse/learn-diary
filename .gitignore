@@ -1,0 +1,4 @@
+# 屏蔽Code文件夹中的特定子文件夹
+Code/Codecpp/
+Code/codejava/
+Code/Qtwork/
