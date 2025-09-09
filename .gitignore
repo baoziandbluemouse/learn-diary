@@ -15,3 +15,6 @@ Code/Algorithm/**/.cph/
 
 # 屏蔽所有exe可执行文件
 *.exe
+
+#屏蔽Front-end
+Front-end/
