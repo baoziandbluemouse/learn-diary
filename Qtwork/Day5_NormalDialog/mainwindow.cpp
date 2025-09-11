@@ -8,56 +8,16 @@
 #include <QInputDialog>
 #include <QStringList>
 #include <QMessageBox>
-#include <QProgressDialog>
-#include <QTimer>
-#include <QWizard>
-#include <QWizardPage>
-#include <QLabel>
-#include <QVBoxLayout>
-#include <QButtonGroup>
-#include <QRadioButton>
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    _count=0;
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::on_updateProgressDialog()
-{
-    //主要作用就是定时更新进度条
-    //到顶了就结束回收资源了
-    _count++;
-    if(_count > 5000){
-        _timer->stop();
-        delete  _timer;
-        _timer = nullptr;
-        delete _progressDialog;
-        _progressDialog = nullptr;
-        _count = 0;
-        return;
-    }
-
-    _progressDialog->setValue(_count);
-}
-
-void MainWindow::on_cancelProgressDialog()
-{
-    _timer->stop();
-    delete  _timer;
-    _timer = nullptr;
-    delete _progressDialog;
-    _progressDialog = nullptr;
-    _count = 0;
-    qDebug()<<"cancel"<<Qt::endl;
-    return;
 }
 
 void MainWindow::on_colorBtn_clicked()
@@ -142,83 +102,5 @@ void MainWindow::on_pushButton_3_clicked()
     }
 
 
-}
-
-
-void MainWindow::on_pushButton_4_clicked()
-{
-    //改用定时器
-    _progressDialog = new QProgressDialog(tr("正在复制"),tr("取消复制"),0,5000,this);
-    _progressDialog->setWindowTitle(tr("文件复制进度对话框"));
-    _progressDialog->setWindowModality(Qt::ApplicationModal);
-    _timer = new QTimer(this);
-    connect(_timer, &QTimer::timeout, this, &MainWindow::on_updateProgressDialog);
-    //下面的connect是当我们取消复制时，进行的回收资源方式
-    connect(_progressDialog, &QProgressDialog::canceled, this, &MainWindow::on_cancelProgressDialog);
-    _timer->start(2);
-    qDebug("复制结束");
-}
-
-
-
-
-
-
-
-
-
-void MainWindow::on_pushButton_6_clicked()
-{
-    QWizard wizard(this);
-    wizard.setWindowTitle(tr("全城热恋"));
-
-    QWizardPage* page1 = new QWizardPage();
-    page1->setTitle(tr("婚恋介绍引导程序"));
-    auto label1 = new QLabel();
-    label1->setText(tr("程序目的帮助您找到人生伴侣"));
-    QVBoxLayout *layout = new QVBoxLayout();
-    layout->addWidget(label1);
-    page1->setLayout(layout);
-    wizard.addPage(page1);
-
-    QWizardPage* page2 = new QWizardPage();
-    page2->setTitle("选择心动类型");
-    QButtonGroup *group = new QButtonGroup(page2);
-    QRadioButton * btn1 = new QRadioButton();
-    btn1->setText("白富美");
-    group->addButton(btn1);
-    QRadioButton * btn2 = new QRadioButton();
-    btn2->setText("萝莉");
-    group->addButton(btn2);
-    QRadioButton * btn3 = new QRadioButton();
-    btn3->setText("御姐");
-    group->addButton(btn3);
-    QRadioButton * btn4 = new QRadioButton();
-    btn4->setText("小家碧玉");
-    group->addButton(btn4);
-    QRadioButton * btn5 = new QRadioButton();
-    btn5->setText("女汉子");
-    group->addButton(btn5);
-    QRadioButton * btn6 = new QRadioButton();
-    btn6->setText("成年人不做选择，全选!");
-    group->addButton(btn6);
-    QVBoxLayout *vboxLayout2 = new QVBoxLayout();
-    for(int i=0;i<group->buttons().size();i++){
-        vboxLayout2->addWidget(group->buttons()[i]);
-    }
-    page2->setLayout(vboxLayout2);
-    wizard.addPage(page2);
-
-    QWizardPage* page3 = new QWizardPage();
-    page3->setTitle(tr("你的缘分即将到来"));
-    auto label3 = new QLabel();
-    label3->setText(tr("感谢您的参与，接下来的一个月会遇到对的人"));
-    QVBoxLayout *layout3 = new QVBoxLayout();
-    layout3->addWidget(label3);
-    page3->setLayout(layout3);
-    wizard.addPage(page3);
-
-    wizard.show();
-    wizard.exec();
 }
 
