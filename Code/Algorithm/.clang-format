@@ -1,0 +1,34 @@
+# 基于 LLVM 风格
+BasedOnStyle: LLVM
+# 缩进宽度为 4
+IndentWidth: 4
+# 每行最大字符数 100
+ColumnLimit: 100
+# 短函数可单行显示
+AllowShortFunctionsOnASingleLine: Inline
+# 自动排序头文件
+SortIncludes: true
+# C 风格类型转换后加空格
+SpaceAfterCStyleCast: true
+# 圆括号内不加空格
+SpacesInParentheses: false
+# 方括号内不加空格
+SpacesInSquareBrackets: false
+# 尖括号内不加空格
+SpacesInAngles: false
+# 尾随注释前加 1 个空格
+SpacesBeforeTrailingComments: 1
+# 不使用 tab，全部用空格
+UseTab: Never
+# C++11 标准
+Standard: Cpp11
+# 强制花括号遵循 Allman 风格
+BreakBeforeBraces: Allman
+# 大括号换行风格设置
+BraceWrapping:
+  AfterFunction: true      # 函数定义后换行
+  AfterClass: true         # 类定义后换行
+  AfterControlStatement: true # 控制语句（if/for/while等）后换行
+  AfterEnum: true          # 枚举定义后换行
+  AfterStruct: true        # 结构体定义后换行
+  BeforeElse: true         # else 前换行

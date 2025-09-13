@@ -101,6 +101,8 @@
             "typeinfo": "cpp",
             "valarray": "cpp",
             "variant": "cpp"
-        }
+        },
+        "clang-format.assumeFilename": "-style=file",
+        "clang-format.language.cuda.style": ""
     }
 }
