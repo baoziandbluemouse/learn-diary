@@ -22,6 +22,12 @@ private slots:
 
     void on_actionNew_File_N_triggered();
 
+    void on_actionopen_File_O_triggered();
+
+    void on_action_open_triggered();
+
+    void slot_set_text(const QString &str);
+
 private:
     Ui::MainWindow *ui;
 };

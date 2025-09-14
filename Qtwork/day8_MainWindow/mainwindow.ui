@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1082</width>
-    <height>768</height>
+    <width>1002</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,13 +24,28 @@
      </rect>
     </property>
    </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>160</y>
+      <width>141</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTextEdit" name="textEdit"/>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1082</width>
+     <width>1002</width>
      <height>25</height>
     </rect>
    </property>
@@ -41,7 +56,15 @@
     <addaction name="actionNew_File_N"/>
     <addaction name="actionshowDock_M"/>
    </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>编辑(&amp;E)</string>
+    </property>
+    <addaction name="actionopen_File_O"/>
+    <addaction name="separator"/>
+   </widget>
    <addaction name="menu_F"/>
+   <addaction name="menu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QDockWidget" name="dockWidget">
@@ -51,27 +74,18 @@
    <attribute name="dockWidgetArea">
     <number>4</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents">
-    <widget class="QWidget" name="verticalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>340</x>
-       <y>-10</y>
-       <width>141</width>
-       <height>201</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QPushButton" name="pushButton">
-        <property name="text">
-         <string>Dock按钮</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </widget>
+   <widget class="QWidget" name="dockWidgetContents"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
   </widget>
   <action name="actionNew_File_N">
    <property name="icon">
@@ -88,6 +102,15 @@
    </property>
    <property name="text">
     <string>showDock(&amp;M)</string>
+   </property>
+  </action>
+  <action name="actionopen_File_O">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/res/favicon.ico</normaloff>:/res/favicon.ico</iconset>
+   </property>
+   <property name="text">
+    <string>open File(&amp;O)</string>
    </property>
   </action>
  </widget>

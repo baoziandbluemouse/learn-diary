@@ -31,12 +31,11 @@ void fun(const char *filename)
 }
 int main()
 {
-    STU t[N] = {
-        {10005, "ZhangSan", 95, 80, 88},
-        {10003, "LiSi", 85, 70, 78},
-        {10002, "CaoKai", 75, 60, 88},
-        {10004, "FangFang", 90, 82, 87},
-        {10001, "MaChao", 91, 92, 77}},
+    STU t[N] = {{10005, "ZhangSan", 95, 80, 88},
+                {10003, "LiSi", 85, 70, 78},
+                {10002, "CaoKai", 75, 60, 88},
+                {10004, "FangFang", 90, 82, 87},
+                {10001, "MaChao", 91, 92, 77}},
         ss[N];
 
     int i, j;
