@@ -1,46 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 110;
-int a[N];
 void solve()
 {
-    int n;
+    int n, a, b = 0, c = 0;
     cin >> n;
     for (int i = 1; i <= n; i++)
     {
-        cin >> a[i];
-    }
-    if (n == 2)
-    {
-        if (a[1] == 0 || a[2] == 0)
+        cin >> a;
+        if (a == 1 && b == 0)
         {
-            cout << 0 << "\n";
+            b = i;
         }
-        else
+        if (a == 1)
         {
-            cout << 1 << "\n";
-        }
-        return;
-    }
-    int fir = 0, end = n;
-    for (int i = 1; i <= n; i++)
-    {
-        if (a[i] == 1)
-        {
-            fir = i;
-            break;
+            c = i;
         }
     }
-    for (int i = n; i >= 1; i--)
-    {
-        if (a[i] == 1)
-        {
-            end = i;
-            break;
-        }
-    }
-    int cnt = end - fir;
-    cout << cnt << "\n";
+    cout << c - b << "\n";
 }
 
 int main()
