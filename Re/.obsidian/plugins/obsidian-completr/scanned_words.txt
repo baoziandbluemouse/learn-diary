@@ -953,6 +953,7 @@ gp
 gR
 graph
 gundong
+grid
 image
 idx
 int
@@ -1434,6 +1435,7 @@ prex
 prey
 perm
 pos
+premax
 qmi
 queue
 qmk
@@ -1718,6 +1720,9 @@ mJf
 me
 mkN
 msR
+maxgt
+minlt
+mingt
 Prim
 PERKET
 PII
@@ -2072,6 +2077,7 @@ hk
 ht
 hZf
 hash
+height
 kruskal
 key
 kOk
@@ -2342,6 +2348,7 @@ rumen
 right
 round
 rev
+repremax
 arr
 and
 acwing

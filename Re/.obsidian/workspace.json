@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "赛后补题/ABC-423.md",
+                "file": "总结/好思路索引.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ABC-423"
+              "title": "好思路索引"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "总结/回文.md",
+                "file": "总结/好思路索引.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "回文 的反向链接列表"
+              "title": "好思路索引 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "总结/回文.md",
+                "file": "总结/好思路索引.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
-              "title": "回文 的出链列表"
+              "title": "好思路索引 的出链列表"
             }
           },
           {
@@ -142,17 +142,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "赛后补题/ABC-423.md",
+                "file": "总结/好思路索引.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ABC-423 的大纲"
+              "title": "好思路索引 的大纲"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -169,10 +169,20 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "704e97fff104a79a",
+  "active": "1cf1b213a21a49ab",
   "lastOpenFiles": [
-    "赛后补题/过往div3补题.md",
     "赛后补题/ABC-423.md",
+    "总结/好思路索引.md",
+    "总结/判断环.md",
+    "总结/区间和.md",
+    "总结/双指针.md",
+    "总结/拓扑排序.md",
+    "总结/位运算与集合论.md",
+    "总结/线段树.md",
+    "总结/线性索引.md",
+    "总结/最大非负积.md",
+    "总结/最大子段和的求法.md",
+    "赛后补题/过往div3补题.md",
     "赛后补题/round-1032.md",
     "赛后补题/ABC-394.md",
     "赛后补题/starcoding-round-4.md",
@@ -187,16 +197,6 @@
     "赛后补题/edu-round-181.md",
     "算法学习/未改动最初版/algorithm-day9/index.md",
     "总结/回文.md",
-    "动态规划/背包问题/背包问题.md",
-    "动态规划/状压dp/状压dp.md",
-    "动态规划/区间dp/区间dp.md",
-    "算法学习/algorithm-day10-11/index.md",
-    "算法学习/algorithm-day9/index.md",
-    "算法学习/algorithm-day6-7/index.md",
-    "总结/判断环.md",
-    "总结/拓扑排序.md",
-    "总结/c++常用函数.md",
-    "算法学习/algorithm-day8/index.md",
     "未命名.canvas",
     "动态规划/矩阵快速幂dp/Pasted image 20250513204449.png",
     "动态规划/矩阵快速幂dp",
