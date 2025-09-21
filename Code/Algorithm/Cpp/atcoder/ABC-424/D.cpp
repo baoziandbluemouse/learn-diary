@@ -4,63 +4,38 @@ const int N = 10;
 using ll = long long;
 char g[N][N];
 int n, m;
-ll ans = 1e9;
+int ans;
 
-bool check()
+void dfs(int x, int y, int f)
 {
-    for (int i = 1; i <= n - 1; i++)
+    if (f >= ans)
+        return;
+    if (y == m + 1)
     {
-        for (int j = 1; j <= m - 1; j++)
-        {
-            if (g[i][j] == '#' && g[i + 1][j] == '#' && g[i][j + 1] == '#' &&
-                g[i + 1][j + 1] == '#')
-            {
-                return false;
-            }
-        }
+        x++;
+        y = 1;
     }
-    return true;
-}
-
-void dfs(ll cnt)
-{
-
-    if (check())
+    if (x == n + 1)
     {
-        ans = min(ans, cnt);
+        ans = f;
         return;
     }
-    for (int i = 1; i <= n - 1; i++)
+    if (g[x][y] == '.')
     {
-        for (int j = 1; j <= m - 1; j++)
-        {
-            if (g[i][j] == '#' && g[i + 1][j] == '#' && g[i][j + 1] == '#' &&
-                g[i + 1][j + 1] == '#')
-            {
-                g[i][j] = '.';
-                dfs(cnt + 1);
-                g[i][j] = '#';
-
-                g[i + 1][j] = '.';
-                dfs(cnt + 1);
-                g[i + 1][j] = '#';
-
-                g[i][j + 1] = '.';
-                dfs(cnt + 1);
-                g[i][j + 1] = '#';
-
-                g[i + 1][j + 1] = '.';
-                dfs(cnt + 1);
-                g[i + 1][j + 1] = '#';
-            }
-        }
+        dfs(x, y + 1, f);
+        return;
     }
+    if (x == 1 || y == 1 || g[x - 1][y] != '#' || g[x][y - 1] != '#' || g[x - 1][y - 1] != '#')
+        dfs(x, y + 1, f);
+    g[x][y] = '.';
+    dfs(x, y + 1, f + 1);
+    g[x][y] = '#';
 }
 
 void solve()
 {
-    ans = 1e9;
     cin >> n >> m;
+    ans = n * m;
     for (int i = 1; i <= n; i++)
     {
         for (int j = 1; j <= m; j++)
@@ -68,7 +43,7 @@ void solve()
             cin >> g[i][j];
         }
     }
-    dfs(0);
+    dfs(1, 1, 0);
     cout << ans << "\n";
 }
 
