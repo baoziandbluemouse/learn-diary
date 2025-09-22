@@ -18,3 +18,9 @@ Code/Algorithm/**/.cph/
 
 #屏蔽Front-end
 Front-end/
+
+#屏蔽Database-learn除了scripts的所有文件
+Database-learn/*
+!Database-learn/Dbeaver/
+Database-learn/Dbeaver/*
+!Database-learn/Dbeaver/Scripts/

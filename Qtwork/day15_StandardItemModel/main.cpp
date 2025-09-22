@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     // w.show();
     QStandardItemModel model;
     //QStandardItemModel有一个不可见的根节点，可以以这个类为基础实现树型模型
+    //这个类是最基础的模型，还有一些集成化更高的模型能实现特定的树型模型，列表模型，网状模型之类
     //实现了树型模型后，再用TreeView显示就好了
     auto * parentItem = model.invisibleRootItem();
     //创建文本显示，图标，和工具显示
