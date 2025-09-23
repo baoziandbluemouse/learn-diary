@@ -4,17 +4,9 @@ using ll = long long;
 void solve()
 {
     int n, m;
-    // 一个桶数组,至少要能加完一次
     cin >> n >> m;
     vector<int> p(m + 1, 0);
-    // 每个集合的和不同
     vector<vector<int>> a(n + 1, vector<int>());
-    ll sum = 0;
-    for (int i = 1; i <= m; i++)
-    {
-        sum += i;
-    }
-    vector<int> cnt(sum + 1, 0);
     for (int i = 1; i <= n; i++)
     {
         int s;
@@ -27,14 +19,36 @@ void solve()
             p[x]++;
         }
     }
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <= m; i++)
     {
         if (p[i] == 0)
         {
-            cout << "No\n";
+            cout << "NO\n";
             return;
         }
     }
+    int tem = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        int ok = 1;
+        for (auto &x : a[i])
+        {
+            p[x]--;
+            if (p[x] == 0)
+            {
+                ok = 0;
+                break;
+            }
+        }
+        tem += ok;
+        // 复原
+        for (auto &x : a[i])
+        {
+            p[x]++;
+        }
+    }
+    cout << (tem >= 2 ? "YES" : "NO");
+    cout << "\n";
 }
 
 int main()
