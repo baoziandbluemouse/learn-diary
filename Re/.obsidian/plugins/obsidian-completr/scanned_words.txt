@@ -1723,6 +1723,7 @@ msR
 maxgt
 minlt
 mingt
+mid
 Prim
 PERKET
 PII
@@ -2637,6 +2638,7 @@ FVV
 Fb
 FG
 Floyd
+Find
 Difference
 DFS
 Distance
