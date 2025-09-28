@@ -9,85 +9,60 @@ void solve()
     int n, m;
     cin >> n >> m;
     vector<string> s(n + 1);
-    vector<vector<int>> vis(n + 1, vector<int>(m + 1, 0)); // 代表四周有几个黑
-    queue<PII> q;
-    int cnt = 0;
-    for (int i = 1; i <= n; i++)
+    vector<vector<int>> vis(n + 5, vector<int>(m + 5, 0)); // 代表这个是不是黑色的
+    vector<vector<int>> cnt(n + 5, vector<int>(m + 5, 0));
+    vector<PII> cur;
+    ll ans = 0;
+    for (int i = 0; i < n; i++)
     {
         cin >> s[i];
     }
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 1; j <= m; j++)
+        for (int j = 0; j < m; j++)
         {
             if (s[i][j] == '#')
             {
-                q.push({i, j});
-                cnt++;
-                for (int k = 0; k < 4; k++)
-                {
-                    int l = i + dx[k];
-                    int r = j + dy[k];
-                    if (l < 1 || l > n || r < 1 || r > m)
-                    {
-                        continue;
-                    }
-                    vis[l][r]++;
-                }
+                cur.push_back({i, j});
+                vis[i][j] = 1;
+                ans++;
             }
         }
     }
-    if (cnt == 0)
+    while (cur.size())
     {
-        cout << 0 << "\n";
-        return;
-    }
-    while (q.size())
-    {
-        auto t = q.front();
-        q.pop();
-        for (int i = 0; i < 4; i++)
+        vector<PII> temp;
+        for (auto &[x, y] : cur)
         {
-            int a = t.first + dx[i];
-            int b = t.second + dy[i];
-            if (a < 1 || a > n || b < 1 || b > m)
+            // 遍历所有黑色单元格，向四周扩展
+            for (int i = 0; i < 4; i++)
             {
-                continue;
-            }
-            if (vis[a][b] > 1)
-            {
-                continue;
-            }
-            if (s[a][b] == '#')
-            {
-                continue;
-            }
-            s[a][b] = '#';
-            q.push({a, b});
-            for (int k = 0; k < 4; k++)
-            {
-                int l = a + dx[k];
-                int r = b + dy[k];
-                if (l < 1 || l > n || r < 1 || r > m)
+                int a = x + dx[i];
+                int b = y + dy[i];
+                if (a < 0 || a >= n || b < 0 || b >= m)
                 {
                     continue;
                 }
-                vis[l][r]++;
+                if (vis[a][b])
+                {
+                    continue;
+                }
+                cnt[a][b]++;
+                temp.push_back({a, b});
             }
         }
-    }
-    cnt = 0;
-    for (int i = 1; i <= n; i++)
-    {
-        for (int j = 1; j <= m; j++)
+        cur.clear();
+        for (auto &[x, y] : temp)
         {
-            if (s[i][j] == '#')
+            if (cnt[x][y] == 1)
             {
-                cnt++;
+                vis[x][y] = 1;
+                cur.push_back({x, y});
+                ans++;
             }
         }
     }
-    cout << cnt << "\n";
+    cout << ans << "\n";
 }
 
 int main()

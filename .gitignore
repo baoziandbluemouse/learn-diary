@@ -24,3 +24,6 @@ Database-learn/*
 !Database-learn/Dbeaver/
 Database-learn/Dbeaver/*
 !Database-learn/Dbeaver/Scripts/
+
+#屏蔽Qtwork中的一个文件夹
+Qtwork/qt-learning-notes-master/
