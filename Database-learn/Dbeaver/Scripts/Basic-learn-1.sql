@@ -17,25 +17,25 @@ DROP TABLE `student`;
 
 INSERT
 	INTO
-	`student`(`name`,
+	`students`(`name`,
 	`major`)
 VALUES('小白', '英语');
 
 INSERT
 	INTO
-	`student`(`name`,
+	`students`(`name`,
 	`major`)
 VALUES('小黑', '历史');
 
 INSERT
 	INTO
-	`student`(`student_id`,
+	`students`(`student_id`,
 	`name`)
 VALUES(3, '小红');
 
 INSERT
 	INTO
-	`student`(`student_id`,
+	`students`(`student_id`,
 	`name`)
 VALUES (4,
 '小蓝');

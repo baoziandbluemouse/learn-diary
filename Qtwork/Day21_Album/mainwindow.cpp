@@ -1,8 +1,9 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include <QMenu>
 #include <QAction>
 #include <QDebug>
+#include <QMenu>
+#include "ui_mainwindow.h"
+#include "wizard.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -44,6 +45,16 @@ MainWindow::~MainWindow()
 void MainWindow::SlotCreatePro(bool)
 {
     qDebug()<<"slot Create Pro triggered"<<Qt::endl;
+    Wizard wizard(this);
+    wizard.setWindowTitle(tr("创建项目"));
+    auto *page = wizard.page(0);
+    page->setTitle(tr("设置项目配置"));
+    //连接信号和槽，把项目配置传回来todo...
+
+    wizard.show();
+    wizard.exec();
+
+    //断开所有信号todo..
 }
 
 void MainWindow::SlotOpenPro(bool)

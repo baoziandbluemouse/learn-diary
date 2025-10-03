@@ -26,3 +26,16 @@ QMenuBar::item:selected {
 QMenu::item:selected {
     background-color:rgb(39,96,154);
 }
+
+/*Wizard基本样式*/
+QWizard {
+    color:rgb(231,231,231);
+    background-color:rgb(46,47,48);
+}
+
+QWizard QLabel#tips {
+    color:red;
+}
+
+
+
