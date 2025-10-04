@@ -17,7 +17,7 @@ CREATE TABLE branch(
 	FOREIGN KEY (manager_id) REFERENCES employee (emp_id) ON
 DELETE
 	SET
-	NULL 
+	NULL -- 如果说 对应的emp_id 被删了，相对的manager_id 就会置为NULL , 注意，假如外键同时是primary_key时，是不能设为NULL的，会直接出错
 );
 
 CREATE TABLE client(
@@ -31,7 +31,7 @@ CREATE TABLE works_with(
 	client_id int,
 	total_sales int,
 	PRIMARY KEY(emp_id, client_id),
-	FOREIGN KEY(emp_id) REFERENCES employee (emp_id) ON DELETE CASCADE,
+	FOREIGN KEY(emp_id) REFERENCES employee (emp_id) ON DELETE CASCADE, -- 如果对应的emp_id删除，那么这里的也会一并删除，是级联删除
 	FOREIGN KEY(client_id) REFERENCES client (client_id) ON DELETE CASCADE
 	
 );
