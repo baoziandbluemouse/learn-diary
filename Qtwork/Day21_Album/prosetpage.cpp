@@ -1,5 +1,6 @@
 #include "prosetpage.h"
 #include <QDir>
+#include <QFileDialog>
 #include <QLineEdit>
 #include "ui_prosetpage.h"
 ProSetPage::ProSetPage(QWidget *parent)
@@ -26,6 +27,12 @@ ProSetPage::ProSetPage(QWidget *parent)
 ProSetPage::~ProSetPage()
 {
     delete ui;
+}
+
+void ProSetPage::GetProSettings(QString &name, QString &path)
+{
+    name = ui->lineEdit->text();
+    path = ui->lineEdit_2->text();
 }
 
 bool ProSetPage::isComplete() const
@@ -55,4 +62,27 @@ bool ProSetPage::isComplete() const
 
     ui->tips->setText("");
     return QWizardPage::isComplete(); //如果还想用基类的函数，就在结尾调用一次基类的函数
+}
+
+void ProSetPage::on_pushButton_clicked()
+{
+    //浏览按钮，添加项目的文件路径
+    QFileDialog file_dialog;
+    file_dialog.setFileMode(QFileDialog::Directory);
+    file_dialog.setWindowTitle("选择导入的文件夹");
+    auto path = QDir::currentPath();
+    file_dialog.setDirectory(path);
+    file_dialog.setViewMode(QFileDialog::Detail);
+
+    //选择后返回项目的文件名，进行记录
+    QStringList fileNames;
+    if (file_dialog.exec()) {
+        fileNames = file_dialog.selectedFiles();
+    }
+    if (fileNames.length() <= 0) {
+        return;
+    }
+    QString import_path = fileNames.at(0);
+    qDebug() << "import_path is " << import_path << Qt::endl;
+    ui->lineEdit_2->setText(import_path);
 }
