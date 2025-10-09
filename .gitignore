@@ -16,8 +16,9 @@ Code/Algorithm/**/.cph/
 # 屏蔽所有exe可执行文件
 *.exe
 
-#屏蔽Front-end
-Front-end/
+#屏蔽Front-end除了Modern-jsp以外的文件夹
+Front-end/*
+!Front-end/Modern-jsp/
 
 #屏蔽Database-learn除了scripts的所有文件
 Database-learn/*
