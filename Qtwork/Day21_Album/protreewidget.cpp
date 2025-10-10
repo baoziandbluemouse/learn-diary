@@ -1,10 +1,18 @@
 #include "protreewidget.h"
 #include <QDir>
+#include <QGuiApplication>
+#include <QMenu>
 #include "const.h"
 #include "protreeitem.h"
 ProTreeWidget::ProTreeWidget(QWidget *parent)
 {
     this->setHeaderHidden(true);
+    connect(this, &ProTreeWidget::itemPressed, this, &ProTreeWidget::slotItemPressed);
+    _action_import = new QAction(QIcon(":/icon/import.png"), tr("导入文件"), this);
+    _action_setstart = new QAction(QIcon(":/icon/core.png"), tr("设置活动项目"), this);
+    _action_closepro = new QAction(QIcon(":/icon/close.png"), tr("关闭项目"), this);
+    _action_slideshow = new QAction(QIcon(":/icon/clideshow.png"), tr("轮播图播放"), this);
+    connect(_action_import, &QAction::triggered, this, &ProTreeWidget::SlotImport);
 }
 
 void ProTreeWidget::AddProToTree(const QString &name, const QString &path)
@@ -30,4 +38,18 @@ void ProTreeWidget::AddProToTree(const QString &name, const QString &path)
     item->setData(0, Qt::DisplayRole, name);
     item->setData(0, Qt::DecorationRole, QIcon(":/icon/dir.png"));
     item->setData(0, Qt::ToolTipRole, file_path);
+    this->addTopLevelItem(item);
 }
+
+void ProTreeWidget::slotItemPressed(QTreeWidgetItem *pressedItem, int column)
+{
+    if (QGuiApplication::mouseButtons() == Qt::RightButton) {
+        QMenu menu(this);
+        int itemtype = pressedItem->type();
+        if (itemtype == TreeItemPro) {
+            _right_btn_item = pressedItem;
+        }
+    }
+}
+
+void ProTreeWidget::SlotImport() {}
