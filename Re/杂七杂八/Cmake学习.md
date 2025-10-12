@@ -91,7 +91,7 @@ add_library(test_lib a.cc b.cc) #默认生成静态库
 add_library(test_lib SHARED a.cc b.cc) #生成了动态库
 ```
 
-4. link_directories: 添加的是库的搜索路径，告诉**cmake要找库就去这里找**，后续只要把库的名字添加就好了
+4. link_directories: 添加的是库的搜索路径，告诉**cmake要找库就去这里找**，后续只要把库的名字添加就好了(用add)
 5. include_directories: 用于指定头文件搜索路径，优点是简单直接，缺点是无法进行权限控制，一旦被执行后，后续的所有代码都能搜索到对应的文件路径。和上面的link差不多
 6. add_subdirectory: 用于添加子项目目录，如果**有该条语句，就先会跑去执行子项目的cmake代码，这样会导致一些需要执行后立马生效的语句作用不到，比如include_directories和link_directories**,如果执行在这条语句后面，则他们添加的目录在子项目中无法生效。有些命令如**target_include_directories和target_link_directories是根据目标target是否被链接使用来生效的，所以这些命令的作用范围与执行顺序无关，且恰好同一个cmake项目中产生的库文件是可以直接通过名称链接的，无论链接对象是在子目录还是父目录**
 7. add_definitions: 用于*添加宏定义*，注意该命令没有执行顺序的问题，只要改项目中用了该命令定义宏，那么所有的源代码都会被定义这个宏 `add_definitions(-DFOO -DBAR ...)` 。
@@ -114,3 +114,34 @@ execute_process(COMMAND git clone https://github.com/<username>/<repository>.git
 ```
 
 12. target_link_libraries: 用于将**可执行文件或库文件链接到库文件或可执行文件**。身为target_xxx的一员，很明显第二个参数也可以进行权限控制。要使用的话一定要先添加库的搜索路径，这里只写出**库名字**
+13. inclue:cmake在新版本下具有*包管理器的功能*，官方将这些功能打包为一个叫*模块*的东西，这玩意相当于多个Cmake命令的集合，而include命令就是可以导入**模块（.cmake后缀文件）**，你可以自己写，也有官方模块，该功能是从cmake3.11开始支持的（一般我们也就用来搞包管理）
+14. find_package:用于查找外界的package，与vcpkge一起用
+15. FetchContent:**这个就是个moudel**，需要先用include导入，它用来从代码仓库中拉取代码（注意这中间不会有任何代理，所以拉取GitHub的仓库可能失败）
+```CMake
+include(FetchContent)#引入功能模块
+
+FetchContent_Declare(
+        my-logger  		 #项目名称
+        GIT_REPOSITORY https://github.com/ACking-you/my-logger.git #仓库地址
+        GIT_TAG        v1.6.2  #仓库的版本tag
+        GIT_SHALLOW TRUE    #是否只拉取最新的记录
+)
+FetchContent_MakeAvailable(my-logger)
+
+add_excutable(main ${SRC})
+#链接到程序进行使用
+target_link_libraries(main my-logger)
+
+```
+16. function/endfunction: 在cmake中用于定义函数，复用cmake代码的命令。第一个参数为函数的名称，后面为参数的名称，使用参数和使用变量时一样的，但是如果参数是列表类型，则在传入的时候就会被展开，然后与函数参数依次对应，多余的参数被 `ARGN` 参数吸收。
+17. target_include_directories/target_link_directories: 这两个一起讲，基础的功能和前面的那两个其实是一样的，**但是target系列的命令都能让你可以进行权限的控制**，他将*路径关联到一个target上*，这里的*target一般是指生成可执行程序命令里的target或者生成库文件的target*，(就是那*两个add命令的第一个参数*)与上一个命令的不同点在于可以*设置导出权限*，比如现在我写了一个项目，这个项目引入了其他库，但是我不想让其他库的符号暴露出去（毕竟使用这个项目的人只关注这个项目的接口，不需要关注其他依赖的接口）可以通过PRIVATE将头文件搜索目录设置不导出的权限。
+
+# Cmake在项目中的接口权限管理
+
+主要用在target系列命令，有三种权限
+可以把这种权限管理和**继承**进行类比
+其中link_directories是必须写出明确权限的，别的默认为PUBLIC
+
+- PUBLIC    和继承里的public差不多
+- PRIVATE   和继承里的private差不多
+- INTERFACE 当前target无法使用，后面再有link这个target的类就能使用(相当于后面变成了PUBLIC)

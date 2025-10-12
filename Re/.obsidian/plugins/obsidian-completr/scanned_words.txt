@@ -90,6 +90,10 @@ diao
 dui
 div
 diff
+directories
+definitions
+debug
+directory
 tags
 true
 title
@@ -190,6 +194,7 @@ target
 tot
 tongbuliu
 tie
+txt
 unordered
 unsigned
 upM
@@ -387,6 +392,8 @@ shuangzhizhen
 ststairs
 starcoding
 stdio
+subdirectory
+source
 false
 flood
 fill
@@ -485,6 +492,9 @@ fZQ
 fruit
 floor
 floyd
+flag
+file
+function
 bit
 bool
 base
@@ -872,6 +882,9 @@ left
 linjiejuzhen
 linjiebiao
 len
+library
+link
+libraries
 gcd
 ge
 get
@@ -954,6 +967,8 @@ gR
 graph
 gundong
 grid
+globbing
+git
 image
 idx
 int
@@ -1046,6 +1061,8 @@ ind
 inv
 inf
 iostream
+include
+inclue
 categories
 cuixingshi
 cnt
@@ -1141,6 +1158,8 @@ cwo
 card
 cin
 cout
+cmake
+clone
 Algorithm
 ABC
 AND
@@ -1341,6 +1360,7 @@ vwN
 vQoFb
 vFtN
 vp
+vcpkge
 png
 prim
 pi
@@ -1436,6 +1456,11 @@ prey
 perm
 pos
 premax
+project
+process
+package
+public
+private
 qmi
 queue
 qmk
@@ -1724,6 +1749,8 @@ maxgt
 minlt
 mingt
 mid
+message
+moudel
 Prim
 PERKET
 PII
@@ -1826,6 +1853,9 @@ PrB
 PJaWW
 Paw
 Pgj
+PROJECT
+PRIVATE
+PUBLIC
 Kruskal
 KSK
 KJ
@@ -2440,6 +2470,8 @@ alCD
 acyclic
 ans
 air
+add
+aux
 ST
 STL
 Squares
@@ -2532,6 +2564,7 @@ Ss
 Sl
 SjP
 SJ
+SOURCE
 Forbidden
 FgF
 Fk
@@ -2639,6 +2672,8 @@ Fb
 FG
 Floyd
 Find
+FILES
+FetchContent
 Difference
 DFS
 Distance
@@ -2747,6 +2782,7 @@ DAG
 Directed
 Dense
 Dijkstra
+DIR
 Ci
 Copyright
 Company
@@ -2846,6 +2882,10 @@ Cii
 Cnn
 CmR
 CP
+Cmake
+CMakeLists
+CMake
+CLion
 element
 ei
 eF
@@ -2933,6 +2973,9 @@ eSG
 endl
 edges
 eacbba
+executable
+execute
+endfunction
 BFS
 BrB
 BW
@@ -3020,6 +3063,7 @@ BGK
 BIL
 Byb
 Buildings
+BINARY
 Magic
 Manhattan
 MJM
@@ -3198,6 +3242,7 @@ xJ
 xW
 xcg
 xhx
+xxx
 XICC
 XYZ
 XT
@@ -3492,6 +3537,7 @@ Io
 Ikkv
 IGO
 IEND
+INTERFACE
 EUE
 EZ
 EPX
@@ -3687,6 +3733,7 @@ LC
 LN
 LCS
 LIS
+Linux
 NnN
 NX
 NH
@@ -4199,6 +4246,7 @@ WA
 Wr
 Wi
 WTn
+Windows
 YiY
 Yc
 YLg
@@ -4471,6 +4519,7 @@ Rc
 Rw
 Rnp
 Rnf
+RECURSE
 VW
 Ve
 VEQ
@@ -4648,6 +4697,9 @@ GyE
 GT
 GoC
 GQi
+GLOB
+Globbing
+GitHub
 JN
 Jp
 Jm
