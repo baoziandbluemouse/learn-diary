@@ -5,12 +5,6 @@
 #ifndef MINU_H
 #define MINU_H
 
+class minus {};
 
-
-class minus {
-
-};
-
-
-
-#endif //MINU_H
+#endif // MINU_H
