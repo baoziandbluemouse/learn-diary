@@ -94,6 +94,7 @@ directories
 definitions
 debug
 directory
+depth
 tags
 true
 title
@@ -195,6 +196,7 @@ tot
 tongbuliu
 tie
 txt
+toolchain
 unordered
 unsigned
 upM
@@ -394,6 +396,7 @@ starcoding
 stdio
 subdirectory
 source
+shift
 false
 flood
 fill
@@ -786,6 +789,7 @@ normal
 null
 nodes
 now
+node
 long
 lcm
 lisanhua
@@ -885,6 +889,7 @@ len
 library
 link
 libraries
+linux
 gcd
 ge
 get
@@ -1063,6 +1068,7 @@ inf
 iostream
 include
 inclue
+install
 categories
 cuixingshi
 cnt
@@ -1160,6 +1166,7 @@ cin
 cout
 cmake
 clone
+clion
 Algorithm
 ABC
 AND
@@ -1361,6 +1368,7 @@ vQoFb
 vFtN
 vp
 vcpkge
+vcpkg
 png
 prim
 pi
@@ -1637,6 +1645,8 @@ jZ
 jnx
 jQe
 jOm
+java
+json
 min
 mask
 mod
@@ -2886,6 +2896,7 @@ Cmake
 CMakeLists
 CMake
 CLion
+Clion
 element
 ei
 eF
@@ -2976,6 +2987,7 @@ eacbba
 executable
 execute
 endfunction
+edit
 BFS
 BrB
 BW
@@ -4601,6 +4613,7 @@ Vygg
 VQ
 VEl
 Vka
+Vcpkg
 Gxr
 GY
 GJ
@@ -4778,6 +4791,7 @@ Jgv
 JGDTe
 JA
 JF
+JVM
 ou
 oS
 ooz
