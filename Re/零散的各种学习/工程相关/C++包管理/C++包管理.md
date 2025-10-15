@@ -41,8 +41,15 @@ vcpkg的使用流程:
 这样子，兼容性问题解决了，依赖也能很清楚地知道了
 
 
+# 莫名其妙的问题
+
+clion在使用vcpkg时，经典模式需要给Cmake配置
+
+```
+-DCMAKE_PREFIX_PATH=E:/program/vcpkg/installed/x64-mingw-dynamic
+```
 
 
-
+而清单模式无法解决问题
 
 
