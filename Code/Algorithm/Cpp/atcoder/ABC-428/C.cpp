@@ -1,99 +1,43 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 8e5 + 10;
-char stk[N];
-int top = 0;
+int pre[N];
 
 void solve()
 {
     int q;
     cin >> q;
-    int cnt = 0;
-    bool err_flag = false;
-    int wr_idx = -1;
+    int len = 0;
+    multiset<int> st;
+
     while (q--)
     {
-        int x;
-        cin >> x;
-        if (x == 1)
+        int op;
+        char c;
+        cin >> op;
+        if (op == 1)
         {
-            char c;
+            len++;
             cin >> c;
-            if (wr_idx != -1)
-            {
-                top++;
-                continue;
-            }
             if (c == '(')
             {
-                if (wr_idx == -1)
-                {
-                    cnt++;
-                }
-                stk[++top] = c;
+                pre[len] = pre[len - 1] + 1;
             }
             else
             {
-                if (top == 0 || (stk[top] == ')' && cnt == 0))
-                {
-                    stk[++top] = c;
-                    wr_idx = top;
-                }
-                else
-                {
-                    stk[++top] = c;
-                    if (wr_idx == -1)
-                    {
-                        cnt--;
-                    }
-                }
+                pre[len] = pre[len - 1] - 1;
             }
+            st.insert(pre[len]);
         }
         else
         {
-            if (wr_idx != -1)
-            {
-                top--;
-                if (top < wr_idx)
-                {
-                    wr_idx = -1;
-                }
-                continue;
-            }
-            char t = stk[top];
-            if (t == '(')
-            {
-                if (wr_idx == -1)
-                {
-                    cnt--;
-                }
-                top--;
-            }
-            else
-            {
-                if (wr_idx == -1)
-                {
-                    cnt++;
-                }
-                top--;
-            }
+            st.erase(st.find(pre[len]));
+            len--;
         }
-        if (wr_idx != -1 || cnt != 0)
-        {
-            err_flag = true;
-        }
-        else
-        {
-            err_flag = false;
-        }
-        if (err_flag)
-        {
-            cout << "No\n";
-        }
-        else
-        {
+        if (*st.begin() >= 0 && pre[len] == 0)
             cout << "Yes\n";
-        }
+        else
+            cout << "No\n";
     }
 }
 
