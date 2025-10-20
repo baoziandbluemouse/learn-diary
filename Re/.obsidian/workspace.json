@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "赛后补题/ABC-428.md",
+                "file": "零散的各种学习/字符串/字符串匹配.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ABC-428"
+              "title": "字符串匹配"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "赛后补题/ABC-428.md",
+                "file": "零散的各种学习/字符串/字符串匹配.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ABC-428 的大纲"
+              "title": "字符串匹配 的大纲"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "e9184d03c4dec621",
   "lastOpenFiles": [
+    "赛后补题/ABC-428.md",
     "赛后补题/ABC-416.md",
     "赛后补题/ABC-417.md",
     "赛后补题/ABC-418.md",
@@ -178,7 +179,6 @@
     "赛后补题/ABC-425.md",
     "赛后补题/ABC-426.md",
     "赛后补题/ABC-427.md",
-    "赛后补题/ABC-428.md",
     "赛后补题/div3补题.md",
     "赛后补题/round-1051.md",
     "赛后补题/round-1052.md",
