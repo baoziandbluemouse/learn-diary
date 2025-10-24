@@ -11,5 +11,19 @@
   "blue-topaz-theme@@toggle-bg-panel-page": true,
   "blue-topaz-theme@@accent-strong@@light": "#000000",
   "blue-topaz-theme@@accent-strong@@dark": "#77C768F7",
-  "blue-topaz-theme@@text-normal@@dark": "#D6DAF9"
+  "blue-topaz-theme@@text-normal@@dark": "#D6DAF9",
+  "minimal-style@@tag-border-width": "1px",
+  "minimal-style@@ui1@@dark": "#9AD3DD",
+  "minimal-style@@ui1@@light": "#638DE800",
+  "minimal-advanced@@cursor": "default",
+  "minimal-style@@ui3@@dark": "#FFC29A",
+  "minimal-advanced@@hide-settings-desc": false,
+  "minimal-advanced@@hide-markdown": false,
+  "minimal-style@@blockquote-font-style": "normal",
+  "minimal-style@@code-comment@@dark": "#5C6364",
+  "minimal-style@@trim-cols": true,
+  "minimal-style@@h1-color@@dark": "#E89D74",
+  "minimal-style@@icon-color@@dark": "#A4AEE5",
+  "minimal-style@@tx1@@dark": "#77AC8B",
+  "minimal-style@@bold-color@@dark": "#E8B186"
 }

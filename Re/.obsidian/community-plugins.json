@@ -1,8 +1,9 @@
 [
   "surfing",
-  "obsidian-reveal-active-file",
-  "heycalmdown-navigate-cursor-history",
   "obsidian-completr",
   "quick-latex",
-  "obsidian-style-settings"
+  "obsidian-style-settings",
+  "obsidian-reveal-active-file",
+  "obsidian-hider",
+  "obsidian-minimal-settings"
 ]

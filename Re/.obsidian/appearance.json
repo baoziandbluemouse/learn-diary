@@ -1,10 +1,10 @@
 {
-  "baseFontSize": 17,
+  "baseFontSize": 19,
   "baseFontSizeAction": true,
-  "interfaceFontFamily": "等距更纱黑体 SC",
-  "textFontFamily": "等距更纱黑体 SC",
-  "monospaceFontFamily": " 等距更纱黑体 SC",
+  "interfaceFontFamily": "霞鹜文楷等宽 屏幕阅读版",
+  "textFontFamily": "霞鹜文楷等宽 屏幕阅读版",
+  "monospaceFontFamily": "LXGW Bright Code",
   "theme": "obsidian",
-  "cssTheme": "Blue Topaz",
+  "cssTheme": "Minimal",
   "accentColor": ""
 }

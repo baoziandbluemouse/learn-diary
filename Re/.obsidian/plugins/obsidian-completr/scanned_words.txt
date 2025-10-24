@@ -95,6 +95,8 @@ definitions
 debug
 directory
 depth
+dcbaabcd
+dcbabcd
 tags
 true
 title
@@ -197,6 +199,8 @@ tongbuliu
 tie
 txt
 toolchain
+type
+table
 unordered
 unsigned
 upM
@@ -590,6 +594,7 @@ bingchaji
 boolean
 baab
 bbaab
+bananab
 width
 wiki
 while
@@ -793,6 +798,7 @@ nodes
 now
 node
 next
+name
 long
 lcm
 lisanhua
@@ -1375,6 +1381,7 @@ vFtN
 vp
 vcpkge
 vcpkg
+views
 png
 prim
 pi
@@ -1476,6 +1483,7 @@ package
 public
 private
 patt
+pattern
 qmi
 queue
 qmk
@@ -1973,6 +1981,7 @@ Ku
 KenN
 KLi
 KMP
+Killer
 you
 yinzifenjie
 yi
@@ -2499,6 +2508,9 @@ abb
 abba
 abbaa
 aab
+abcd
+ananab
+anana
 ST
 STL
 Squares
@@ -3093,6 +3105,8 @@ BIL
 Byb
 Buildings
 BINARY
+BKDR
+BZOJ
 Magic
 Manhattan
 MJM
@@ -3196,6 +3210,7 @@ MnrS
 Mex
 MEX
 Match
+Miller
 xi
 xj
 xAi
@@ -3469,6 +3484,7 @@ HFj
 HSZ
 HKh
 Hi
+Hash
 IEC
 IcI
 IOk
@@ -4551,6 +4567,7 @@ Rw
 Rnp
 Rnf
 RECURSE
+Rabin
 VW
 Ve
 VEQ
@@ -4895,6 +4912,8 @@ of
 ov
 oQ
 oy
+orzc
+orzhjw
 ÜP
 ÜG
 ßl

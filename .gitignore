@@ -31,3 +31,7 @@ Database-learn/Dbeaver/*
 
 #屏蔽Qtwork中的一个文件夹
 Qtwork/qt-learning-notes-master/
+
+# 屏蔽Asio目录下所有Debug和.vs文件夹
+Asio/**/Debug/
+Asio/**/.vs/
