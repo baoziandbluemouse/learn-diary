@@ -24,6 +24,7 @@
   "minimal-style@@trim-cols": true,
   "minimal-style@@h1-color@@dark": "#E89D74",
   "minimal-style@@icon-color@@dark": "#A4AEE5",
-  "minimal-style@@tx1@@dark": "#77AC8B",
-  "minimal-style@@bold-color@@dark": "#E8B186"
+  "minimal-style@@bold-color@@dark": "#E8B186",
+  "minimal-style@@tx1@@dark": "#DF9A85",
+  "minimal-style@@italic-color@@dark": "#E4D079"
 }
