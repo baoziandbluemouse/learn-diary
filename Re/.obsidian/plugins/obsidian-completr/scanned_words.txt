@@ -411,6 +411,7 @@ sDd
 sDDD
 sDDF
 sDDzN
+socket
 false
 flood
 fill
@@ -610,6 +611,8 @@ bbaab
 bananab
 bjj
 bccQPP
+bind
+bitset
 width
 wiki
 while
@@ -703,6 +706,7 @@ wuqiong
 weiyunsuan
 wot
 wGJJ
+write
 num
 niyuan
 neuro
@@ -919,6 +923,7 @@ libraries
 linux
 lmmE
 lll
+listen
 gcd
 ge
 get
@@ -1204,6 +1209,10 @@ clone
 clion
 ccc
 cJKKQRR
+connect
+context
+clear
+code
 Algorithm
 ABC
 AND
@@ -1415,6 +1424,7 @@ vcpkge
 vcpkg
 views
 vpww
+value
 png
 prim
 pi
@@ -1519,6 +1529,8 @@ patt
 pattern
 ptt
 pss
+port
+protocol
 qmi
 queue
 qmk
@@ -1819,6 +1831,8 @@ moudel
 mon
 multiset
 miii
+manythings
+mountain
 Prim
 PERKET
 PII
@@ -2114,6 +2128,7 @@ yiwei
 yihuo
 yID
 yOg
+youxianduilie
 hua
 huosuzhanshiba
 hh
@@ -2371,6 +2386,7 @@ zuheshu
 zhenhong
 zmH
 zvN
+zhan
 root
 rs
 rXYZ
@@ -2464,6 +2480,8 @@ round
 rev
 repremax
 rrhgg
+read
+reset
 arr
 and
 acwing
@@ -2568,6 +2586,8 @@ aff
 aUUUB
 ann
 algorithm
+accept
+asio
 ST
 STL
 Squares
@@ -2661,6 +2681,7 @@ Sl
 SjP
 SJ
 SOURCE
+Socket
 Forbidden
 FgF
 Fk
@@ -2886,6 +2907,7 @@ DDDD
 DGGc
 Dnn
 Day
+DNS
 Ci
 Copyright
 Company
@@ -2993,6 +3015,7 @@ Clion
 CNnn
 CCC
 Cjq
+Communication
 element
 ei
 eF
@@ -3177,6 +3200,7 @@ BKDR
 BZOJ
 Bff
 BBBS
+Boost
 Magic
 Manhattan
 MJM
@@ -3868,6 +3892,7 @@ LIS
 Linux
 LLLtT
 LOO
+Listening
 NnN
 NX
 NH

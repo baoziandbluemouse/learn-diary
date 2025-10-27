@@ -1,0 +1,148 @@
+CREATE TABLE S (
+    SNO CHAR(5) PRIMARY KEY,  
+    SNAME VARCHAR(20) NOT NULL,  
+    STATUS INT,  
+    CITY VARCHAR(20)  
+);
+
+CREATE TABLE P (
+    PNO CHAR(5) PRIMARY KEY, 
+    PNAME VARCHAR(20) NOT NULL,  
+    COLOR VARCHAR(10),  
+    WEIGHT DECIMAL(6, 2)  
+);
+
+CREATE TABLE J (
+    JNO CHAR(5) PRIMARY KEY,  
+    JNAME VARCHAR(20) NOT NULL,  
+    CITY VARCHAR(20)  
+);
+
+CREATE TABLE SPJ (
+    SNO CHAR(5),  
+    PNO CHAR(5),  
+    JNO CHAR(5),  
+    QTY INT,  
+    PRIMARY KEY (SNO,
+PNO,
+JNO),
+    FOREIGN KEY (SNO) REFERENCES S(SNO),  
+    FOREIGN KEY (PNO) REFERENCES P(PNO),  
+    FOREIGN KEY (JNO) REFERENCES J(JNO)   
+);
+
+SELECT
+	SNAME,
+	CITY
+FROM
+	s;
+
+SELECT
+	PNAME,
+	COLOR,
+	WEIGHT
+FROM
+	p;
+
+SELECT
+	DISTINCT JNO
+FROM
+	SPJ
+WHERE
+	SNO = 'S1';
+
+SELECT
+	p.PNAME,
+	spj.QTY
+FROM
+	spj
+JOIN p ON
+	spj.PNO = p.PNO
+WHERE
+	spj.JNO = 'J2';
+
+SELECT
+	DISTINCT spj.PNO
+FROM
+	spj
+JOIN s ON
+	spj.SNO = s.SNO
+WHERE
+	s.CITY = '上海';
+
+SELECT
+	DISTINCT j.JNAME
+FROM
+	j
+JOIN spj ON
+	j.JNO = spj.JNO
+JOIN s ON
+	spj.SNO = s.SNO
+WHERE
+	s.CITY = '上海';
+
+SELECT
+	JNO
+FROM
+	j
+WHERE
+	JNO NOT IN (
+	SELECT
+		DISTINCT spj.JNO
+	FROM
+		spj
+	JOIN s ON
+		spj.SNO = s.SNO
+	WHERE
+		s.CITY = '天津'
+);
+
+UPDATE
+	p
+SET
+	COLOR = '蓝'
+WHERE
+	COLOR = '红';
+
+UPDATE
+	spj
+SET
+	SNO = 'S3'
+WHERE
+	SNO = 'S5'
+	AND PNO = 'P6'
+	AND JNO = 'J4';
+
+DELETE
+FROM
+	spj
+WHERE
+	spj.SNO = 'S2';
+
+DELETE
+FROM
+	s
+WHERE
+	s.SNO = 'S2';
+
+INSERT
+	INTO
+	s (SNO,
+	SNAME,
+	STATUS,
+	CITY)
+VALUES ('S2',
+'盛锡',
+10,
+'北京');
+-- 如果前面把s表中的S2给删了，这里会出错，所以要先恢复再插入
+INSERT
+	INTO
+	spj (SNO,
+	PNO,
+	JNO,
+	QTY)
+VALUES ('S2',
+'P4',
+'J6',
+200);
