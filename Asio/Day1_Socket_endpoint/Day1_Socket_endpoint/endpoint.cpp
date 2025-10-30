@@ -163,3 +163,207 @@ int accept_new_connection()
         return e.code().value();
     }
 }
+
+void use_const_buffer()
+{
+    std::string buf = "hello,world";
+    boost::asio::const_buffer asio_buf(buf.c_str(), buf.length()); //第一个是首地址，第二个是长度
+    std::vector<boost::asio::const_buffer> buffers_sequence;
+    buffers_sequence.push_back(asio_buf);
+}
+
+void use_buffer_str()
+{
+    boost::asio::const_buffers_1 output_buf = boost::asio::buffer("hello world");
+}
+
+void use_buffer_array()
+{
+    const size_t BUF_SIZE_BYTES = 20;
+    std::unique_ptr<char[]> buf(new char[BUF_SIZE_BYTES]); // new完把首地址传给unique_ptr了
+    auto input_buf = boost::asio::buffer(static_cast<void *>(buf.get()), BUF_SIZE_BYTES);
+    //第一个告诉buffer这是一个指针，第二个告诉buffer这个指针后续有连续空间，并给出长度
+}
+
+void write_to_socket(boost::asio::ip::tcp::socket &sock)
+{
+    std::string buf = "hello world";
+    std::size_t total_bytes_written = 0;
+    //循环发送的方法
+    //使用wirte_some方法，他会返回自己写入的字节数
+    while (total_bytes_written != buf.length())
+    {
+        total_bytes_written += sock.write_some(boost::asio::buffer(
+            buf.c_str() + total_bytes_written, buf.length() - total_bytes_written));
+        //一次发不完，用total_bytes_written来记录偏移量
+    }
+}
+
+int send_data_by_write_some()
+{
+    std::string raw_ip_address = "127.0.0.1";
+    unsigned short port_num = 3333;
+    try
+    {
+        boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string(raw_ip_address),
+                                          port_num);
+        boost::asio::io_context ioc;
+        boost::asio::ip::tcp::socket sock(ioc, ep.protocol());
+        sock.connect(ep);
+        write_to_socket(sock);
+    }
+    catch (boost::system::system_error &e)
+    {
+        std::cout << "Error occured! Error code = " << e.code() << ". Message: " << e.what();
+
+        return e.code().value();
+    }
+    return 0;
+}
+
+int send_data_by_send()
+{
+    std::string raw_ip_address = "127.0.0.1";
+    unsigned short port_num = 3333;
+    try
+    {
+        boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string(raw_ip_address),
+                                          port_num);
+        boost::asio::io_context ioc;
+        boost::asio::ip::tcp::socket sock(ioc, ep.protocol());
+        sock.connect(ep);
+        std::string buf = "hello,world";
+        int send_length = sock.send(boost::asio::buffer(buf.c_str(), buf.length()));
+        // <0 系统级错误 =0 对端关闭 >0 直接为buf.length长度
+        if (send_length <= 0)
+        {
+            std::cout << "send failed" << std::endl;
+            return 0;
+        }
+    }
+    catch (boost::system::system_error &e)
+    {
+        std::cout << "Error occured! Error code = " << e.code() << ". Message: " << e.what();
+
+        return e.code().value();
+    }
+    return 0;
+}
+
+int send_data_by_wirte()
+{
+    std::string raw_ip_address = "127.0.0.1";
+    unsigned short port_num = 3333;
+    try
+    {
+        boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string(raw_ip_address),
+                                          port_num);
+        boost::asio::io_context ioc;
+        boost::asio::ip::tcp::socket sock(ioc, ep.protocol());
+        sock.connect(ep);
+        std::string buf = "hello,world";
+        int send_length = boost::asio::write(sock, boost::asio::buffer(buf.c_str(), buf.length()));
+        // <0 系统级错误 =0 对端关闭 >0 直接为buf.length长度
+        if (send_length <= 0)
+        {
+            std::cout << "send failed" << std::endl;
+            return 0;
+        }
+    }
+    catch (boost::system::system_error &e)
+    {
+        std::cout << "Error occured! Error code = " << e.code() << ". Message: " << e.what();
+
+        return e.code().value();
+    }
+    return 0;
+}
+
+std::string read_from_socket(boost::asio::ip::tcp::socket &sock)
+{
+    const unsigned char MESSAGE_SIZE = 7;
+    char buf[MESSAGE_SIZE];
+    std::size_t total_bytes_read = 0;
+    while (total_bytes_read != MESSAGE_SIZE)
+    {
+        total_bytes_read += sock.read_some(
+            boost::asio::buffer(buf + total_bytes_read, MESSAGE_SIZE - total_bytes_read));
+    }
+    return std::string(buf, total_bytes_read);
+}
+
+int read_data_by_read_some()
+{
+    std::string raw_ip_address = "127.0.0.1";
+    unsigned short port_num = 3333;
+    try
+    {
+        boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string(raw_ip_address),
+                                          port_num);
+        boost::asio::io_context ioc;
+        boost::asio::ip::tcp::socket sock(ioc, ep.protocol());
+        sock.connect(ep);
+        read_from_socket(sock);
+    }
+    catch (boost::system::system_error &e)
+    {
+        std::cout << "Error occured! Error code = " << e.code() << ". Message: " << e.what();
+        return e.code().value();
+    }
+    return 0;
+}
+
+int read_data_by_receive()
+{
+    std::string raw_ip_address = "127.0.0.1";
+    unsigned short port_num = 3333;
+    try
+    {
+        boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string(raw_ip_address),
+                                          port_num);
+        boost::asio::io_context ioc;
+        boost::asio::ip::tcp::socket sock(ioc, ep.protocol());
+        sock.connect(ep);
+        const unsigned char BUFF_SIZE = 7;
+        char buffer_receive[BUFF_SIZE];
+        int receive_length = sock.receive(boost::asio::buffer(buffer_receive, BUFF_SIZE));
+        if (receive_length <= 0)
+        {
+            std::cout << "read fail" << std::endl;
+        }
+    }
+    catch (boost::system::system_error &e)
+    {
+        std::cout << "Error occured! Error code = " << e.code() << ". Message: " << e.what();
+        return e.code().value();
+    }
+    return 0;
+}
+
+int read_data_by_read()
+{
+    std::string raw_ip_address = "127.0.0.1";
+    unsigned short port_num = 3333;
+    try
+    {
+        boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string(raw_ip_address),
+                                          port_num);
+        boost::asio::io_context ioc;
+        boost::asio::ip::tcp::socket sock(ioc, ep.protocol());
+        sock.connect(ep);
+        const unsigned char BUFF_SIZE = 7;
+        char buffer_receive[BUFF_SIZE];
+        int receive_length =
+            boost::asio::read(sock, boost::asio::buffer(buffer_receive, BUFF_SIZE));
+        if (receive_length <= 0)
+        {
+            std::cout << "read fail" << std::endl;
+        }
+    }
+    catch (boost::system::system_error &e)
+    {
+        std::cout << "Error occured! Error code = " << e.code() << ". Message: " << e.what();
+        return e.code().value();
+    }
+    return 0;
+}

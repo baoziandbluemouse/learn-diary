@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "算法学习-至2025二月/algorithm-stl-2/index.md",
+                "file": "零散的各种学习/网络编程(通过asio库进行学习)/Day1_endpoint/网络编程的基础流程，Socket的建立.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "网络编程的基础流程，Socket的建立"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "零散的各种学习/字符串/字符串匹配.md",
+                "file": "零散的各种学习/图论/图的遍历，树的遍历，网格图的遍历.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "字符串匹配 的反向链接列表"
+              "title": "图的遍历，树的遍历，网格图的遍历 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "零散的各种学习/字符串/字符串匹配.md",
+                "file": "零散的各种学习/图论/图的遍历，树的遍历，网格图的遍历.md",
                 "linksCollapsed": true,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "字符串匹配 的出链列表"
+              "title": "图的遍历，树的遍历，网格图的遍历 的出链列表"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "算法学习-至2025二月/algorithm-stl-2/index.md",
+                "file": "零散的各种学习/网络编程(通过asio库进行学习)/Day1_endpoint/网络编程的基础流程，Socket的建立.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "index 的大纲"
+              "title": "网络编程的基础流程，Socket的建立 的大纲"
             }
           }
         ],
@@ -171,20 +171,30 @@
   },
   "active": "6b67fed57025cb5a",
   "lastOpenFiles": [
+    "零散的各种学习/网络编程(通过asio库进行学习)/Day1_endpoint/buffer.jpg",
+    "零散的各种学习/图论/图的遍历，树的遍历，网格图的遍历.md",
+    "算法学习-至2025二月/algorithm-dfs-and-bfs/index.md",
+    "算法学习-至2025二月/algorithm-day6-7/index.md",
     "算法学习-至2025二月/algorithm-day5/index.md",
+    "算法学习-至2025二月/algorithm-stl-2/index.md",
     "算法学习-至2025二月/algorithm-stl/index.md",
     "算法学习-至2025二月/algorithm-manythings/index.md",
-    "零散的各种学习/网络编程/Day1_endpoint/网络编程的基础流程，Socket的建立.md",
-    "零散的各种学习/网络编程/Day1_endpoint/process.jpg",
+    "算法学习-至2025二月/algorithm-manythings/niu1.png",
+    "算法学习-至2025二月/algorithm-iostream/index.md",
+    "算法学习-至2025二月/algorithm-day10-11/index.md",
     "零散的各种学习/图论/二叉树.md",
+    "零散的各种学习/图论/二叉树前序，中序，后序遍历的转换.md",
+    "零散的各种学习/网络编程(通过asio库进行学习)/Day1_endpoint/网络编程的基础流程，Socket的建立.md",
+    "零散的各种学习/网络编程(通过asio库进行学习)/Day1_endpoint/process.jpg",
+    "零散的各种学习/网络编程/Day1_endpoint/buffer.jpg.crdownload",
     "未命名.canvas",
     "未命名.base",
     "零散的各种学习/工程相关/Cmake学习.md",
     "零散的各种学习/工程相关/C++包管理/C++包管理.md",
     "赛后补题/ABC-429.md",
     "零散的各种学习/好思路索引.md",
-    "零散的各种学习/网络编程/Day1_endpoint",
-    "零散的各种学习/网络编程",
+    "零散的各种学习/网络编程(通过asio库进行学习)/Day1_endpoint",
+    "零散的各种学习/网络编程(通过asio库进行学习)",
     "赛后补题/ABC-423.md",
     "零散的各种学习/数据结构/哈希.md",
     "零散的各种学习/数据结构/线段树.md",
@@ -195,14 +205,6 @@
     "赛后补题/过往div3补题.md",
     "赛后补题/ABC-394.md",
     "赛后补题/ABC-428.md",
-    "赛后补题/ABC-416.md",
-    "赛后补题/ABC-417.md",
-    "赛后补题/ABC-418.md",
-    "赛后补题/ABC-425.md",
-    "赛后补题/ABC-426.md",
-    "赛后补题/ABC-427.md",
-    "赛后补题/div3补题.md",
-    "赛后补题/round-1051.md",
     "零散的各种学习/工程相关/C++包管理/edit.png",
     "零散的各种学习/工程相关/C++包管理/屏幕截图 2025-10-14 000819.png",
     "零散的各种学习/工程相关/C++包管理/vcpkg.png",
@@ -213,10 +215,7 @@
     "零散的各种学习/数论",
     "零散的各种学习/工程相关",
     "零散的各种学习/数据结构",
-    "零散的各种学习/字符串",
     "动态规划/矩阵快速幂dp/Pasted image 20250513204449.png",
-    "算法学习-至2025二月/algorithm-dfs-and-bfs/dfs-and-bfs-distinction.jpg",
-    "算法学习-至2025二月/algorithm-dfs-and-bfs/huosuzhanshiba.jpg",
-    "动态规划/最长递增子序列/6.png"
+    "算法学习-至2025二月/algorithm-dfs-and-bfs/dfs-and-bfs-distinction.jpg"
   ]
 }

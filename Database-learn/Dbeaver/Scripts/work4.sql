@@ -1,0 +1,107 @@
+-- 创建商店表 A
+CREATE TABLE A (
+    ANO CHAR(5) PRIMARY KEY,
+-- 商店号，作为主键
+ANAME VARCHAR(50) NOT NULL,
+-- 商店名，非空
+ADDR VARCHAR(100)
+-- 地址
+);
+-- 创建职员表 B
+CREATE TABLE B (
+    BNO CHAR(5) PRIMARY KEY,
+-- 职员号，作为主键
+BNAME VARCHAR(20) NOT NULL,
+-- 职员姓名，非空
+SEX CHAR(2) CHECK (SEX IN ('男', '女')),
+-- 性别，限制为男女
+AGE INT CHECK (AGE > 0
+AND AGE < 120),
+-- 年龄，合理范围约束
+ANO CHAR(5) REFERENCES A(ANO),
+-- 所在商店，外键关联商店表
+SALARY DECIMAL(10, 2) CHECK (SALARY >= 0)
+-- 工资，非负约束
+);
+-- 创建商品表 C
+CREATE TABLE C (
+    CNO CHAR(5) PRIMARY KEY,
+-- 商品号，作为主键
+CNAME VARCHAR(50) NOT NULL,
+-- 商品名，非空
+PRICE DECIMAL(8, 2) CHECK (PRICE >= 0)
+-- 单价，非负约束
+);
+-- 创建销售表 D
+CREATE TABLE D (
+    ANO CHAR(5) REFERENCES A(ANO),
+-- 商店号，外键关联商店表
+CNO CHAR(5) REFERENCES C(CNO),
+-- 商品号，外键关联商品表
+QUANTITY INT CHECK (QUANTITY > 0),
+-- 销售数量，正数约束
+    PRIMARY KEY (ANO,
+CNO)
+-- 联合主键（商店+商品唯一确定销售记录）
+);
+
+SELECT
+	b.BNAME ,
+	b.AGE ,
+	b.SALARY
+FROM
+	b
+WHERE
+	SEX = 'W';
+
+SELECT
+	b.BNAME ,
+	a.ANAME
+FROM
+	b
+JOIN a ON
+	b.ANO = a.ANO
+WHERE
+	b.SALARY >= 3000;
+
+SELECT
+	ANO,
+	SUM(QUANTITY)
+FROM
+	d
+GROUP BY
+	ANO
+ORDER BY
+	SUM(QUANTITY) DESC
+LIMIT 10;
+
+SELECT
+	c.CNAME
+FROM
+	c
+WHERE
+	c.CNO NOT IN (
+	SELECT
+		DISTINCT c.CNO
+	FROM
+		c
+	WHERE
+		c.CNAME = '光盘');
+
+UPDATE
+	b
+SET
+	SALARY = SALARY * 1.15
+WHERE
+	b.BNO = '012';
+
+ALTER TABLE d ADD COLUMN DATET DATE;
+
+CREATE VIEW View_1 AS
+SELECT
+	ANAME,
+	ADDR
+FROM
+	a
+WHERE
+	ADDR LIKE 'Fu%';

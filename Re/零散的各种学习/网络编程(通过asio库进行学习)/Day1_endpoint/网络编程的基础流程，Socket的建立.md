@@ -6,10 +6,10 @@ tags:
 # 网络编程的根基
 
 
-![](零散的各种学习/网络编程/Day1_endpoint/process.jpg)
+![](process.jpg)
 
 
-如图，网络编程的所有基本都是基于这张图的流程。
+如图，网络编程的所有基本都是基于这张图的流程,使用的是*TCP协议*进行。
 
 这是一个客户-服务端模式的通信方式，根据计算机网络，我们知道，两台主机的进程想要进行通信，首先要**得知对方的IP地址以及端口号(port)**，在网络编程中，当我们获取到了对方的IP地址以及端口号，我们会使用一个叫*endpoint*的数据结构将这两个玩意进行绑定。
 
@@ -244,3 +244,78 @@ int accept_new_connection() {
 	}
 }
 ```
+
+
+
+# buffer结构
+
+
+在建立了连接之后，客户端就要开始传输数据了，asio使用了一个名为buffer的数据结构用于传输数据，接下来简单说下他的大致原理。
+
+boost::asio提供了asio::mutable_buffer 和 asio::const_buffer这两个结构，他们是一段连续的空间，首字节存储了后续数据的长度。
+
+asio::mutable_buffer用于写服务，asio::const_buffer用于读服务。但是这两个结构都没有被asio的api**直接使用**。
+
+对于api的buffer参数，asio提出了MutableBufferSequence和ConstBufferSequence概念，他们是由多个asio::mutable_buffer和asio::const_buffer组成的。也就是说boost::asio为了*节省空间*，将*一部分连续的空间组合起来*，作为参数交给api使用。
+
+我们可以理解为MutableBufferSequence的数据结构为`std::vector[asio::mutable_buffer](asio::mutable_buffer)`
+
+
+![图示buffer结构](buffer.jpg)
+
+
+每隔vector存储的都是mutable_buffer的地址，每个mutable_buffer的第一个字节表示数据的长度，后面跟着数据内容。  
+
+这么*复杂的结构交给用户使用并不合适*，所以asio提出了*buffer()函数*，该函数接收多种形式的字节流，该函数返回asio::mutable_buffers_1 o或者asio::const_buffers_1结构的对象。
+
+具体来说：
+- 如果传递给buffer()的参数是一个只读类型，则函数返回asio::const_buffers_1 类型对象。  
+- 如果传递给buffer()的参数是一个可写类型，则返回asio::mutable_buffers_1 类型对象。
+
+asio::const_buffers_1和asio::mutable_buffers_1是asio::mutable_buffer和asio::const_buffer的适配器，提供了符合MutableBufferSequence和ConstBufferSequence概念的接口(*这个适配器涉及到了模板相关知识，具体与SFINAE技术相关,C++20特性concept也是对SFINAE技术的简化*),所以他们可以作为boost::asio的api函数的参数使用。
+
+**简单概括一下，我们可以用buffer()函数生成我们要用的缓存存储数据。**
+
+接下来看下不使用buffer要如何写出符合条件的参数
+
+```cpp
+void use_const_buffer()
+{
+    std::string buf = "hello,world";
+    boost::asio::const_buffer asio_buf(buf.c_str(), buf.length()); //第一个是首地址，第二个是长度
+    std::vector<boost::asio::const_buffer> buffers_sequence;
+    buffers_sequence.push_back(asio_buf);
+}
+```
+
+
+这是最原始的写法，我们一般不会用，而是采用buffer函数
+
+以下两个例子来看看buffer函数如何生成以字符串为基底，和以数组为基底的数据结构
+
+```cpp
+void use_buffer_str()
+{
+    boost::asio::const_buffers_1 output_buf = boost::asio::buffer("hello world");
+}
+```
+
+```cpp
+void use_buffer_array()
+{
+    const size_t BUF_SIZE_BYTES = 20;
+    std::unique_ptr<char[]> buf(new char[BUF_SIZE_BYTES]); //new完把首地址传给unique_ptr了
+    auto input_buf = boost::asio::buffer(static_cast<void*>(buf.get()), BUF_SIZE_BYTES);
+    //第一个告诉buffer这是一个指针，第二个告诉buffer这个指针后续有连续空间，并给出长度
+}
+```
+
+
+以上就是buffer函数的基本用法了,其实就是第一个参数传*首地址（指针指向的就是首地址）*，第二个参数传*长度*。（这是比较精细的用法了）
+
+大部分都可以直接传进去，也不用加长度，具体可以去看源码
+
+接下来我们来开始讲解客户端与服务端传输数据，即wirte(),read()部分
+
+
+

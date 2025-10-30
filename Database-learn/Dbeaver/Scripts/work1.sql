@@ -95,3 +95,36 @@ WHERE
 		medical.employeeid
 	FROM
 		medical );
+-- 后续
+
+SELECT
+	AVG(m.medi_cost)
+FROM
+	medical m
+JOIN employee em ON
+	m.employeeid = em.employeeid
+WHERE
+	em.headship = '工程师';
+
+UPDATE
+	employee e
+JOIN department d ON
+	e.department_id = d.department_id
+SET
+	e.salary = e.salary * 1.1
+WHERE
+	d.name = '人事部门';
+
+DELETE
+	m
+FROM
+	medical m
+JOIN employee e ON
+	m.employeeid = e.employeeid
+JOIN department d ON
+	e.department_id = d.department_id
+WHERE
+	d.name = '财务部';
+
+CREATE INDEX idx_medical_employeeid ON
+medical(employeeid);
